@@ -1,4 +1,4 @@
-![logo](/images/tecnm.png)
+![logo](/images/tec.png)
 >**Tecnológico Nacional de México  
 Instituto Tecnológico Campus Tijuana  
 Ing. en informática**  
