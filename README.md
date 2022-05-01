@@ -48,5 +48,5 @@ def main(){
 }
 
 ## Output  
-![logo](/img/corre.png)
+![logo](/images/corre.png)
 
