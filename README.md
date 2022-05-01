@@ -1,2 +1,2 @@
-# Unit # 2 branch. Big Data course.
+# Unit # 2 branch.
 
