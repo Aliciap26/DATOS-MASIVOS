@@ -54,8 +54,8 @@ def main(){
 ## Practice #3  
 
 [PDF link]()  
-[Scala File(Clasification)]()  
-[Scala File(Regression)]()  
+[Scala File(Clasification)](https://github.com/Aliciap26/DATOS-MASIVOS/blob/unit_2/practices/classification.scala)  
+[Scala File(Regression)](https://github.com/Aliciap26/DATOS-MASIVOS/blob/unit_2/practices/regressiont.scala)  
 
 
 ## Random Forest concept.  
