@@ -97,7 +97,7 @@ println(s"Learned classification forest model:\n ${model.toDebugString}")
 
 // Save and load model
 model.save(sc, "target/tmp/myRandomForestClassificationModel")
-val sameModel = RandomForestModel.load(sc, "target/tmp/myRandomForestClassificationModel")  
+val sameModel = RandomForestModel.load(sc, "target/tmp/myRandomForestClassificationModel")
 
 
 ## Output.  
