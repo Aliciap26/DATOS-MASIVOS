@@ -53,7 +53,7 @@ def main(){
 
 ## Practice #3  
 
-[PDF link]()  
+[PDF link](https://github.com/Aliciap26/DATOS-MASIVOS/blob/unit_2/practices/practice%203%20u2.pdf)  
 [Scala File(Clasification)](https://github.com/Aliciap26/DATOS-MASIVOS/blob/unit_2/practices/classification.scala)  
 [Scala File(Regression)](https://github.com/Aliciap26/DATOS-MASIVOS/blob/unit_2/practices/regressiont.scala)  
 
