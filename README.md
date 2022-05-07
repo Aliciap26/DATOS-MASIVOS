@@ -8,4 +8,4 @@ Datos Masivos
 Febrero- Junio 2022  
 **Integrantes**  
 Munguia Silva Edgar Geovanny  
-Alicia Guadalupe Pérez López 
+Pérez López Alicia Guadalupe 
