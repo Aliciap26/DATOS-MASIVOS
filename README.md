@@ -234,8 +234,8 @@ scala>
 
 ## Practice #5  
 
-[PDF link]()  
-[Scala File]()  
+[PDF link](https://github.com/Aliciap26/DATOS-MASIVOS/blob/unit_2/practices/practica%235.pdf)  
+[Scala File](https://github.com/Aliciap26/DATOS-MASIVOS/blob/unit_2/practices/practice_5.scala)  
 
 ## Concept of Multilayer perceptron classifier.  
 The Multilayer Perceptron Classifier (MLPC) is a classifier based on the feed-forward artificial neural network. The MLPC consists of multiple layers of nodes. Each layer is fully connected to the next layer of the network. The input layer nodes represent the input data.
