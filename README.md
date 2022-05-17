@@ -6,6 +6,7 @@
 
 
 ## Input  
+~~~
 package org.apache.spark.examples.mllib
 
 import org.apache.spark.{SparkConf, SparkContext}
@@ -46,7 +47,7 @@ def main(){
     sc.stop()
     }
 }
-
+~~~
 ## Output  
 ![logo](/images/corre.png)  
 
@@ -62,7 +63,7 @@ def main(){
 Random Forest, is a popular machine learning algorithm that belongs to the supervised learning technique. It can be used for both classification and regression problems in ML. It is based on the concept of ensemble learning, which is a process of combining multiple classifiers to solve a complex problem and improve model performance. As the name suggests, "Random Forest is a classifier that contains a series of decision trees on various subsets of the given dataset and takes the average to improve the predictive accuracy of that dataset." Instead of relying on a decision tree, the random forest takes the prediction of each tree and based on the majority votes of the predictions, predicts the final result.
 
 ## Input code (Clasification).  
-
+~~~
 import org.apache.spark.mllib.tree.RandomForest  
 import org.apache.spark.mllib.tree.model.RandomForestModel  
 import org.apache.spark.mllib.util.MLUtils  
@@ -98,10 +99,10 @@ println(s"Learned classification forest model:\n ${model.toDebugString}")
 // Save and load model
 model.save(sc, "target/tmp/myRandomForestClassificationModel")
 val sameModel = RandomForestModel.load(sc, "target/tmp/myRandomForestClassificationModel")  
-
+~~~
 
 ## Output.  
-
+~~~
 Tree 0:
 
 If (feature 245 <= 16.0)
@@ -162,9 +163,9 @@ Predict: 0.0
 
 scala> 
 
-
+~~~
 ## Input code (Regression).  
-
+~~~
 import org.apache.spark.mllib.tree.RandomForest  
 import org.apache.spark.mllib.tree.model.RandomForestModel  
 import org.apache.spark.mllib.util.MLUtils  
@@ -201,9 +202,9 @@ println(s"Learned regression forest model:\n ${model.toDebugString}")
 model.save(sc, "target/tmp/myRandomForestRegressionModel")  
 val sameModel = RandomForestModel.load(sc, "target/tmp/myRandomForestRegressionModel")  
 
-
+~~~
 ## Output.  
-
+~~~
 Tree 0:
 
 If (feature 406 <= 126.5)
@@ -230,7 +231,7 @@ Else (feature 406 > 126.5)
      Predict: 1.0
 
 scala> 
-
+~~~
 
 ## Practice #5  
 
