@@ -293,8 +293,8 @@ Test set accuracy=0.9019607843137255
 ~~~
 ## Practice #7.  
 
-[PDF link]()  
-[Scala File]()  
+[PDF link](https://github.com/Aliciap26/DATOS-MASIVOS/blob/unit_2/practices/practice7.pdf)  
+[Scala File](https://github.com/Aliciap26/DATOS-MASIVOS/blob/unit_2/practices/nb.scala)  
 
 ## Concept of Naive Bayes.  
 Naive Bayes is one of the simplest and most powerful algorithms for classification based on Bayes' Theorem with an assumption of independence between predictors. Naive Bayes is easy to build and particularly useful for very large data sets.
