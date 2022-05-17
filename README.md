@@ -302,14 +302,14 @@ Naive Bayes is one of the simplest and most powerful algorithms for classificati
 The Naive Bayes classifier assumes that the effect of a particular feature on a class is independent of other features. For example, a loan applicant is desirable or undesirable depending on their income, prior loan and transaction history, age, and location. Even if these features are interdependent, these features are considered independently. This assumption simplifies computation, and is therefore considered naive. This assumption is called conditional class independence.
 
 ## Strengths.  
--A quick and easy way to predict classes, for binary and multiclass classification problems.
--The algorithm performs better than other classification models, even with less training data.
--The decoupling of the class conditional feature distributions means that each distribution can be estimated independently as if it had only one dimension.
+-A quick and easy way to predict classes, for binary and multiclass classification problems.  
+-The algorithm performs better than other classification models, even with less training data.  
+-The decoupling of the class conditional feature distributions means that each distribution can be estimated independently as if it had only one dimension.  
 
 ## weaknesses.  
--Naive Bayes algorithms are known to be poor estimators. Therefore, the odds that are obtained should not be taken very seriously.
--The Naive assumption of independence will most likely not reflect what the data is like in the real world.
--When the test data set has a feature that has not been observed in the training set, the model will assign it a probability of zero and predictions will be useless.
+-Naive Bayes algorithms are known to be poor estimators. Therefore, the odds that are obtained should not be taken very seriously.  
+-The Naive assumption of independence will most likely not reflect what the data is like in the real world.  
+-When the test data set has a feature that has not been observed in the training set, the model will assign it a probability of zero and predictions will be useless.  
 
 ## Code.  
 
