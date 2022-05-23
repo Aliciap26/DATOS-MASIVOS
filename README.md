@@ -63,7 +63,7 @@ def main(){
 Random Forest, is a popular machine learning algorithm that belongs to the supervised learning technique. It can be used for both classification and regression problems in ML. It is based on the concept of ensemble learning, which is a process of combining multiple classifiers to solve a complex problem and improve model performance. As the name suggests, "Random Forest is a classifier that contains a series of decision trees on various subsets of the given dataset and takes the average to improve the predictive accuracy of that dataset." Instead of relying on a decision tree, the random forest takes the prediction of each tree and based on the majority votes of the predictions, predicts the final result.
 
 ## Input code (Clasification).  
-~~~
+~~~ 
 import org.apache.spark.mllib.tree.RandomForest  
 import org.apache.spark.mllib.tree.model.RandomForestModel  
 import org.apache.spark.mllib.util.MLUtils  
@@ -370,7 +370,52 @@ println ("tasa de error =" + (1-precision))
 In this practice, we will use an algorithm of machine learning called multilayer perceptron, we will use its libraries to succesfully make the evaluation practice from unit 2 of big data course.
 
 ## Code.  
+~~~
+##Import neccesary libraries
 
+import org.apache.spark.ml.classification.MultilayerPerceptronClassifier
+import org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator
+import org.apache.spark.ml.feature.VectorAssembler
+import org.apache.spark.ml.feature.{VectorAssembler, StringIndexer}
+import org.apache.spark.ml.linalg.Vectors
+
+## Load dataframe (provided by the teacher)
+
+val csvfile=spark.read.format("csv").option("header","true").option("inferSchema", "true").load("iris.csv")
+
+## Clean data
+
+val Clean =csvfile.na.drop()
+
+##Show columns name
+
+Clean.columns
+
+## show schema
+Clean.printSchema
+
+##print the first 5 columns
+
+Clean.show(5)
+
+##Use the describe() method to learn more about the data in the DataFrame.
+
+Clean.describe().show 
+
+##Make the pertinent transformation for the categorical data which will be
+our labels to classify.
+val labelIndexer = new StringIndexer().setInputCol("species").setOutputCol("indexedLabel").fit(Clean)
+sustituir la columna "species" con nuestra columna "indexedLabel" y la vamos a mostrar con el nombre de "label"
+
+val indexed = labelIndexer.transform(Clean).drop("species").withColumnRenamed("indexedLabel", "label") 
+indexed.describe().show() 
+val assembler = new VectorAssembler().setInputCols(Array("sepal_length","sepal_width","petal_length","petal_width")).setOutputCol("features")
+val  features = assembler.transform(indexed)
+val labelIndexer = new StringIndexer().setInputCol("label").setOutputCol("indexedLabel").fit(indexed)
+println(s"Found labels: ${labelIndexer.labels.mkString("[", ", ", "]")}")
+
+features.show
+~~~
 
 ## Outputs.
 
@@ -379,7 +424,7 @@ In this practice, we will use an algorithm of machine learning called multilayer
 
 ## Edgar Munguia:  
 
-## Alicia Lopez:  
+## Alicia Pérez:  
 
 
 
