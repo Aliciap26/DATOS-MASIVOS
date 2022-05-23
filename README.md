@@ -359,3 +359,34 @@ println ("tasa de error =" + (1-precision))
 ##  Output.  
 
 ![bayes](/images/bayes.PNG)  
+
+
+## Evaluation practice. 
+
+[PDF link]()  
+[Scala File]()  
+
+## Introduction.  
+In this practice, we will use an algorithm of machine learning called multilayer perceptron, we will use its libraries to succesfully make the evaluation practice from unit 2 of big data course.
+
+## Code.  
+
+
+## Outputs.
+
+
+##  Conclusions.  
+
+## Edgar Munguia:  
+
+## Alicia Lopez:  
+
+
+
+## Link of the video (Youtube):  
+
+
+## Github link:  
+
+
+
