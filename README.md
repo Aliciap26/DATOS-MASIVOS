@@ -436,8 +436,9 @@ println(s"Test set accuracy = ${evaluator.evaluate(predictionAndLabels)}")
 
 ~~~
 
-## Outputs.
-Test set accuracy = 0.95
+## Outputs.  
+scala>println(s"Test set accuracy = ${evaluator.evaluate(predictionAndLabels)}")  
+Test set accuracy = 0.95  
 
 ##  Conclusions.  
 
