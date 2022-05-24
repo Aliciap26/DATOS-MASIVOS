@@ -415,16 +415,35 @@ val labelIndexer = new StringIndexer().setInputCol("label").setOutputCol("indexe
 println(s"Found labels: ${labelIndexer.labels.mkString("[", ", ", "]")}")
 
 features.show
+##Build the classification model and explain its architecture
+
+vamos a separar el dataset en 30% en datos de prueba y un 70% en datos de entrenamiento establecemos la semilla de aleatoriedad
+val splits = features.randomSplit(Array(0.7, 0.3), seed = 1234L) 
+val train = splits(0) 
+val test = splits(1)
+val layers = Array[Int](4, 5, 4, 3)
+val trainer = new MultilayerPerceptronClassifier().setLayers(layers).setBlockSize(128).setSeed(1234L).setMaxIter(100)
+val model = trainer.fit(train)
+val result = model.transform(test)
+
+
+##Print the model results
+val predictionAndLabels = result.select("prediction", "label")
+predictionAndLabels.show
+
+val evaluator = new MulticlassClassificationEvaluator().setMetricName("accuracy")
+println(s"Test set accuracy = ${evaluator.evaluate(predictionAndLabels)}")
+
 ~~~
 
 ## Outputs.
-
+Test set accuracy = 0.95
 
 ##  Conclusions.  
 
 ## Edgar Munguia:  
 
-## Alicia Pérez:  
+## Alicia Pérez:  This evaluative practice, in my opinion, was a little more complex since it contained the topics that were presented in class, and the practices based on them, if it was a small challenge and the truth is that it is a bit difficult for me to transmit what I recently learned, but achieved.
 
 
 
