@@ -363,8 +363,8 @@ println ("tasa de error =" + (1-precision))
 
 ## Evaluation practice. 
 
-[PDF link]()  
-[Scala File]()  
+[PDF link](https://github.com/Aliciap26/DATOS-MASIVOS/blob/unit_2/practices/Practice%20unit%202.pdf)  
+[Scala File](https://github.com/Aliciap26/DATOS-MASIVOS/blob/unit_2/practices/evaluation%20practice%202.scala)  
 
 ## Introduction.  
 In this practice, we will use an algorithm of machine learning called multilayer perceptron, we will use its libraries to succesfully make the evaluation practice from unit 2 of big data course.
@@ -437,9 +437,10 @@ println(s"Test set accuracy = ${evaluator.evaluate(predictionAndLabels)}")
 ~~~
 
 ## Outputs.  
+~~~
 scala>println(s"Test set accuracy = ${evaluator.evaluate(predictionAndLabels)}")  
 Test set accuracy = 0.95  
-
+~~~
 ##  Conclusions.  
 
 ## Edgar Munguia:  
