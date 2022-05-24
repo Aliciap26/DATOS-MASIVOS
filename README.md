@@ -442,15 +442,16 @@ Test set accuracy = 0.95
 ##  Conclusions.  
 
 ## Edgar Munguia:  
+In this unit, we learned more about machine learning and some of the algorithms using this technology. Machine learning is the main topic in technology in the present years because it represents the future of technology and data. We, as future data scientists, we will use this kind of algorithms to make our live easier when working with this kind of data, so, in conclusion, we can say, that machine learning its a powerful tool for the treatment of data, and of course, it will bring a lot of benefits for us, as data scientists.  
 
-## Alicia Pérez:  This evaluative practice, in my opinion, was a little more complex since it contained the topics that were presented in class, and the practices based on them, if it was a small challenge and the truth is that it is a bit difficult for me to transmit what I recently learned, but achieved.
-
-
+## Alicia Pérez:  
+This evaluative practice, in my opinion, was a little more complex since it contained the topics that were presented in class, and the practices based on them, if it was a small challenge and the truth is that it is a bit difficult for me to transmit what I recently learned, but achieved.  
 
 ## Link of the video (Youtube):  
-
+https://www.youtube.com/watch?v=esK8jToP6E0  
 
 ## Github link:  
+https://github.com/Aliciap26/DATOS-MASIVOS/tree/unit_2  
 
 
 
