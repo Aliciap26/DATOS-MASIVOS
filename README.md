@@ -54,7 +54,11 @@ def main(){
 ## Practice #2
 [PDF link]{https://github.com/Aliciap26/DATOS-MASIVOS/blob/unit_2/practices/Practice%20%232.pdf}
 [scala File]{https://github.com/Aliciap26/DATOS-MASIVOS/blob/unit_2/practices/PRACTICA%202.Pipeline}
-##
+## Concept
+Decision trees and their ensembles are popular methods for machine learning regression and classification tasks. Decision trees are widely used because they are easy to interpret, handle categorical features, extend to multiclass classification settings, do not require feature scaling, and can capture nonlinearities and feature interactions. Ensemble-of-trees algorithms, such as random forests and boosting, are among the best for classification and regression tasks.
+
+A decision tree has a structure similar to a flowchart where an internal node represents a feature or attribute, the branch represents a decision rule, and each node or leaf represents the result. The top node of a decision tree is known as the root node.
+
 ## Input code 
 ~~~
 import org.apache.spark.ml.Pipeline
@@ -308,6 +312,7 @@ scala>
 [Scala File]{https://github.com/Aliciap26/DATOS-MASIVOS/blob/unit_2/practices/Practica4.Gradi}
 
 ## Concept of 
+Support vector machine (SVM) es un algoritmo de aprendizaje supervisado que se utiliza en muchos problemas de clasificación y regresión, incluidas aplicaciones médicas de procesamiento de señales, procesamiento del lenguaje natural y reconocimiento de imágenes y voz.
 
 ## Code
 ~~~
