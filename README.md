@@ -51,11 +51,11 @@ def main(){
 ## Output  
 ![logo](/images/corre.png)  
 
-##Practice #2
+## Practice #2
 [PDF link]
 {
 ##
-##Input code 
+## Input code 
 ~~~
 import org.apache.spark.ml.Pipeline
 import org.apache.spark.ml.classification.DecisionTreeClassificationModel
@@ -117,7 +117,7 @@ println(s"Test Error = ${(1.0 - accuracy)}")
 val treeModel = model.stages(2).asInstanceOf[DecisionTreeClassificationModel]
 println(s"Learned classification tree model:\n ${treeModel.toDebugString}")
 ~~~
-##Ouput.
+## Ouput.
 ~~~
 
 Predict: 0.87
