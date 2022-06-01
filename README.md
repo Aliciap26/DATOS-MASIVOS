@@ -73,7 +73,22 @@ model.clusterCenters.foreach(println)
 
 
 ## Output.  
+## Sum of Squared Errors:  
+~~~
+scala> println(s"Within Set Sum of Squared Errors = $WSSSE")
+Within Set Sum of Squared Errors = 8.095172370767671E10
 
+~~~
+## Centroids:  
+~~~
+scala> println("Cluster Centers: ")
+Cluster Centers: 
+
+scala> model.clusterCenters.foreach(println)
+[7993.574780058651,4196.803519061584,5837.4926686217,2546.624633431085,2016.2873900293255,1151.4193548387098]
+[9928.18918918919,21513.081081081084,30993.486486486487,2960.4324324324325,13996.594594594595,3772.3243243243246]
+[35273.854838709674,5213.919354838709,5826.096774193548,6027.6612903225805,1006.9193548387096,2237.6290322580644]
+~~~
 
 
 ## Conclusions.  
