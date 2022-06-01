@@ -99,7 +99,10 @@ scala> model.clusterCenters.foreach(println)
 This practice was a little bit short, but the knowlege i got was big, because i learned how to use kmeans algorithm to cluster data. In this case, we worked with customer data to cluster the customers acording his features. I made this practice in data mining too(in a diferent context) so im sure i learned how to use it in all of possible cases.
 
 
-## Alicia López:  
+## Alicia López: 
+It is interesting to see how the data can be controlled with a method, in addition to this the k-means method seemed particular to me since it can classify data depending on its characteristics.
+In R we could observe the graphs of the data and it is still more visual how they are accommodated.
+
 
 
 
