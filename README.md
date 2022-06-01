@@ -1,11 +1,42 @@
-![logo](/images/tec.png)
->**Tecnológico Nacional de México  
-Instituto Tecnológico Campus Tijuana  
-Ing. en informática**  
-**Asignatura**  
-Datos Masivos  
-**Semestre**  
-Febrero- Junio 2022  
-**Integrantes**  
-Munguia Silva Edgar Geovanny  
-Pérez López Alicia Guadalupe 
+## Evaluation practice unit 3, Big Data.  
+
+[PDF link]()  
+[.R File]()  
+
+## Introduction.  
+
+
+
+## Code.  
+
+
+
+
+
+## Output.  
+
+
+
+## Conclusions.  
+
+
+
+## Edgar Munguia:  
+
+
+
+## Alicia López:  
+
+
+
+## Video link (Youtube):  
+
+
+## Github repository link:  
+
+
+
+
+
+
+
