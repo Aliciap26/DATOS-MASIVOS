@@ -1,7 +1,7 @@
 ## Evaluation practice unit 3, Big Data.  
 
 [PDF link]()  
-[.R File]()  
+[.R File](https://github.com/Aliciap26/DATOS-MASIVOS/blob/unit_3/evaluation%20practice/unit3_bigdata.scala)  
 
 ## Introduction.  
 The goal of this practice is to try to clustering customers from specific regions from a wholesale distributor. 
@@ -96,7 +96,7 @@ scala> model.clusterCenters.foreach(println)
 
 
 ## Edgar Munguia:  
-
+This practice was a little bit short, but the knowlege i got was big, because i learned how to use kmeans algorithm to cluster data. In this case, we worked with customer data to cluster the customers acording his features. I made this practice in data mining too(in a diferent context) so im sure i learned how to use it in all of possible cases.
 
 
 ## Alicia López:  
