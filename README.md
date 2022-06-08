@@ -187,7 +187,7 @@ val mb = 1024*1024
 println("Used memory: " + (runtime.totalMemory - runtime.freeMemory) / mb + " MB")
 ~~~  
 ![svm](/img/dtc1.PNG)  
-![svm](/img/dtc21.PNG)  
+![svm](/img/dtc2.PNG)  
 ![svm](/img/dtc3.PNG)  
 
 ## Logistic Regression
@@ -331,7 +331,7 @@ println(duration)
  
  ![svm](/img/mp.PNG)  
  ![svm](/img/mp3.PNG)  
- ![svm](/img/mp4G)  
+ ![svm](/img/mp4.PNG  
  
  
 # Conclusions.
