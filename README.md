@@ -190,4 +190,28 @@ println("Used memory: " + (runtime.totalMemory - runtime.freeMemory) / mb + " MB
 ~~~
 
 ~~~
+ ## Multilayer perceptron.
+ ~~~
+ 
+ ~~~
+ 
+ 
+# Conclusiones.
+
+Podemos notar como cada algoritmo tiene distintas predicciones y cual es su margen de error, lo cual es interesante ya que se trabajó con el mismo archivo de datos (csv), es interesante el cómo se puede manejar una gran cantidad de datos con, este tipo de algoritmos, nos llevamos un aprendizaje de cómo usar estas herramientas y la gran cantidad de cosas que podemos realizar. En conclusión conforme efectividad el mejor de los algoritmos es el de SVM, ya que en los promedios muestra menor rango de error.
+
+# Referencias.
+
+- MATLAB. (2015, 2 marzo). Support Vector Machine (SVM). MATLAB & Simulink. Recuperado 5 de junio de 2022, de https://es.mathworks.com/discovery/support-vector-machine.html
+
+- Unir, V. (2021, 19 octubre). Árboles de decisión: en qué consisten y aplicación en Big Data. UNIR. Recuperado 5 de junio de 2022, de https://www.unir.net/ingenieria/revista/arboles-de-decision/
+
+- Gonzalez, L. (2020, 21 agosto). Regresión Logística - Teoría. 🤖 Aprende IA. Recuperado 5 de junio de 2022, de https://aprendeia.com/regresion-logistica-multiple-machine-learning-teoria/#:%7E:text=La%20Regresi%C3%B3n%20Log%C3%ADstica%20es%20uno,cualquier%20problema%20de%20clasificaci%C3%B3n%20binaria.
+
+- Sciencedirect. (2014a, abril 1). Multilayer Perceptron. Recuperado 5 de junio de 2022, de https://www.sciencedirect.com/topics/computer-science/multilayer-perceptron
+
+
+
+
+
 
