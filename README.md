@@ -5,7 +5,7 @@
 ## Introduction.
 This project consists of 4 algorithms which we are going to compare to determine which is the most efficient and convenient to use in various situations.
 We finished the subject of Massive Data which consists of 4 units, which were very interesting and gave us a lot of knowledge regarding the topic of big data, we learned a lot and what we highlight the most are the topics of machine learning, since as we know , ML is one of the topics that sounds the most in our society, so it is necessary to be at the forefront to implement these technologies and not be left behind technologically speaking, we, as future data scientists, must know better than anyone, this type of algorithms, next, we are going to present said algorithms, we will define them, we will show them, we will compare them to determine, which one is the best, in terms of speed and efficiency.
-# Marco teórico de los algoritmos.
+# Conceptual framework.
 
 ## Support Vector Machine (SVM): 
 It is a supervised learning algorithm used in many classification and regression problems, including medical applications of signal processing, natural language processing, and image and speech recognition.
