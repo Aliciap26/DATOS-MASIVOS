@@ -313,7 +313,7 @@ println(duration)
  ~~~
  
  
-# Conclusiones.
+# Conclusions.
 
 We can notice how each algorithm has different predictions and what is its margin of error, which is interesting since we worked with the same data file (csv), it is interesting how a large amount of data can be handled with, this type algorithms, we learn how to use these tools and the large number of things we can do. In conclusion, according to effectiveness, the best of the algorithms is that of SVM, since in the averages it shows a smaller range of error.
 
