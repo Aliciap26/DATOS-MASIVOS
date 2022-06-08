@@ -1,6 +1,12 @@
 
 
-# Final project.
+# Final project.  
+
+[PDF link]()  
+[SVM scala file]()  
+[Decision tree scala file]()  
+[Logistic regression scala file]()  
+[Multilayer perceptron scala file]()  
 
 ## Introduction.
 This project consists of 4 algorithms which we are going to compare to determine which is the most efficient and convenient to use in various situations.
@@ -100,7 +106,11 @@ println("Elapsed time: %1d ms".format(totalTime))
 val runtime = Runtime.getRuntime
 val mb = 1024*1024
 println("Used memory: " + (runtime.totalMemory - runtime.freeMemory) / mb + " MB")
-~~~
+~~~  
+![svm](/img/svm1.PNG)  
+![svm](/img/svm1.PNG)  
+![svm](/img/svm1.PNG)  
+
 ## Decision Tree
 ~~~
 //First we must tell spark to start counting the time since we run it, then we must import the libraries, start a simple session in spark
@@ -175,7 +185,11 @@ println("Elapsed time: %1d ms".format(totalTime))
 val runtime = Runtime.getRuntime
 val mb = 1024*1024
 println("Used memory: " + (runtime.totalMemory - runtime.freeMemory) / mb + " MB")
-~~~
+~~~  
+![svm](/img/dtc1.PNG)  
+![svm](/img/dtc21.PNG)  
+![svm](/img/dtc3.PNG)  
+
 ## Logistic Regression
 ~~~
 // Starting timer
@@ -240,7 +254,10 @@ val duration = (timerstop - timerstar) / 1000
 println(duration)
 
 
-~~~
+~~~  
+![svm](/img/lr1.PNG)  
+![svm](/img/lr2.PNG)  
+
  ## Multilayer perceptron.
  ~~~
  //Start timer
@@ -310,12 +327,27 @@ val duration = (endtimer - starttimer) / 1000
 
 //Print the time that took the algorithm to run
 println(duration)
- ~~~
+ ~~~  
+ 
+ ![svm](/img/mp.PNG)  
+ ![svm](/img/mp3.PNG)  
+ ![svm](/img/mp4G)  
  
  
 # Conclusions.
 
-We can notice how each algorithm has different predictions and what is its margin of error, which is interesting since we worked with the same data file (csv), it is interesting how a large amount of data can be handled with, this type algorithms, we learn how to use these tools and the large number of things we can do. In conclusion, according to effectiveness, the best of the algorithms is that of SVM, since in the averages it shows a smaller range of error.
+We can notice how each algorithm has different predictions and what is its margin of error, which is interesting since we worked with the same data file (csv), it is interesting how a large amount of data can be handled with, this type algorithms, we learn how to use these tools and the large number of things we can do. In conclusion, according to effectiveness, the best of the algorithms is that of SVM, since in the averages it shows a smaller range of error.  
+
+# Repository link: 
+https://github.com/Aliciap26/DATOS-MASIVOS/tree/Unit-4
+
+
+# Video link (Youtube):  
+
+
+
+
+
 
 # References.
 
