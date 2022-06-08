@@ -46,21 +46,6 @@ La Regresión Logística es uno de los algoritmos de Machine Learning más simpl
 Referencia: 
 - Gonzalez, L. (2020, 21 agosto). Regresión Logística - Teoría. 🤖 Aprende IA. Recuperado 5 de junio de 2022, de https://aprendeia.com/regresion-logistica-multiple-machine-learning-teoria/#:%7E:text=La%20Regresi%C3%B3n%20Log%C3%ADstica%20es%20uno,cualquier%20problema%20de%20clasificaci%C3%B3n%20binaria.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## Multilayer perceptron:
 El perceptrón multicapa (MLP) es un complemento de la red neuronal de avance. Consta de tres tipos de capas: la capa de entrada, la capa de salida y la capa oculta. La capa de entrada recibe la señal de entrada para ser procesada. La capa de salida realiza la tarea requerida, como la predicción y la clasificación. Un número arbitrario de capas ocultas que se colocan entre la capa de entrada y la de salida son el verdadero motor computacional del MLP. De manera similar a una red de avance en un MLP, los datos fluyen en la dirección de avance desde la capa de entrada a la de salida. Las neuronas en el MLP se entrenan con el algoritmo de aprendizaje de retropropagación. Los MLP están diseñados para aproximar cualquier función continua y pueden resolver problemas que no son linealmente separables. Los principales casos de uso de MLP son la clasificación, el reconocimiento, la predicción y la aproximación de patrones.
 
@@ -71,7 +56,138 @@ Referencia:
 ## Implementación.
 Para llevar a cabo la implementación de los algoritmos anteriormente mencionados, hicimos uso del lenguaje de programación spark/scala, ya que se trata de una herramienta muy poderosa para los tópicos de Big Data (Datos masivos) y además, es relativamente sencilla de utilizar, en realidad, la comparamos más o menos con python, ya que no se trata de un lenguaje tan complejo en comparación con otros. Las posibilidades que nos ofrece, son infinitas, siendo para nosotros, una de las herramientas top para trabajar, con datos masivos.
 
+# Codigo
+## SVM
+~~~
+//First we must tell spark to start counting the time since we run it, then we must import the libraries, start a simple session in spark
+val start = System.currentTimeMillis
+import org.apache.spark.ml.classification.LinearSVC
+import org.apache.spark.ml.feature.{VectorAssembler, StringIndexer}
+import org.apache.spark.ml.linalg.Vectors
+import org.apache.spark.mllib.evaluation.MulticlassMetrics
+
+import org.apache.log4j._
+Logger.getLogger("org").setLevel(Level.ERROR)
 
 
 
+val data = spark.read.option("header", "true").option("inferSchema","true").option("delimiter",";")csv("C:/Users/x/Documents/projet/bank-full.csv")
+
+val lsvc = new LinearSVC().setMaxIter(10).setRegParam(0.1)
+
+//Transform the categorical data to numeric
+val labelIndexer = new StringIndexer().setInputCol("loan").setOutputCol("indexedLabel").fit(data)
+val indexed = labelIndexer.transform(data).withColumnRenamed("indexedLabel", "label") 
+
+//In order to avoid error we need to create 2 new columns label and features
+//Here we create them using StringIndexer and VectorAssembler
+val assembler = new VectorAssembler().setInputCols(Array("age", "balance", "day", "duration", "previous")).setOutputCol("features")
+val features = assembler.transform(indexed)
+
+val Array(training, test) = features.randomSplit(Array(0.7, 0.3), seed = 12345)
+
+val lsvcModel = lsvc.fit(training)
+
+val results = lsvcModel.transform(test)
+
+val predictionAndLabels = results.select($"prediction",$"label").as[(Double, Double)].rdd
+val metrics = new MulticlassMetrics(predictionAndLabels)
+
+println("Confusion matrix:")
+println(metrics.confusionMatrix)
+
+metrics.accuracy
+
+val error = 1 - metrics.accuracy
+
+println(s"Coefficients: ${lsvcModel.coefficients} Intercept: ${lsvcModel.intercept}")
+
+//Get the total time of the program execution
+val totalTime = System.currentTimeMillis - start
+println("Elapsed time: %1d ms".format(totalTime))
+
+//Get the total of MB used 
+val runtime = Runtime.getRuntime
+val mb = 1024*1024
+println("Used memory: " + (runtime.totalMemory - runtime.freeMemory) / mb + " MB")
+~~~
+## Desicion Tree
+~~~
+//First we must tell spark to start counting the time since we run it, then we must import the libraries, start a simple session in spark
+val start = System.currentTimeMillis
+
+import org.apache.spark.ml.Pipeline
+import org.apache.spark.ml.classification.DecisionTreeClassificationModel
+import org.apache.spark.ml.classification.DecisionTreeClassifier
+import org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator
+import org.apache.spark.ml.feature.{VectorAssembler, IndexToString, StringIndexer, VectorIndexer}
+import org.apache.spark.sql.SparkSession
+
+import org.apache.log4j._
+Logger.getLogger("org").setLevel(Level.ERROR)
+
+val spark = SparkSession.builder().getOrCreate()
+
+val data = spark.read.option("header", "true").option("inferSchema","true").option("delimiter",";")csv("C:/Users/x/Documents/projet/bank-full.csv")
+
+
+//Transform the categorical data to numeric, merges the new data with the previous values
+//this time with the numeric data and renames the loan column as label to use it in the execution
+val labelIndexer = new StringIndexer().setInputCol("loan").setOutputCol("indexedLabel").fit(data)
+val indexed = labelIndexer.transform(data).drop("loan").withColumnRenamed("indexedLabel", "label") 
+val assembler = (new VectorAssembler().setInputCols(Array("age", "balance", "day", "duration", "previous")).setOutputCol("features"))
+val features = assembler.transform(indexed)
+val filter = features.withColumnRenamed("loan", "label")
+
+val finalData = filter.select("label", "features")
+
+// Index labels, adding metadata to the label column.
+// Fit on whole dataset to include all labels into the index.
+val labelIndexer = new StringIndexer().setInputCol("label").setOutputCol("indexedLabel").fit(finalData)
+// Automatically identify categorical features and then index them.
+val featureIndexer = new VectorIndexer().setInputCol("features").setOutputCol("indexedFeatures").setMaxCategories(4).fit(finalData)
+// Split the data into training and test sets (30% held out for testing).
+val Array(trainingData, testData) = finalData.randomSplit(Array(0.7, 0.3))
+
+// Train a DecisionTree model.
+val dt = new DecisionTreeClassifier().setLabelCol("indexedLabel").setFeaturesCol("indexedFeatures")
+
+// Convert indexed labels back to original labels.
+val labelConverter = new IndexToString().setInputCol("prediction").setOutputCol("predictedLabel").setLabels(labelIndexer.labels)
+
+// Chain indexers and tree in a Pipeline.
+val pipeline = new Pipeline().setStages(Array(labelIndexer, featureIndexer, dt, labelConverter))
+
+// Train the model, this also runs the indexers.
+val model = pipeline.fit(trainingData)
+
+// Make the predictions.
+val predictions = model.transform(testData)
+
+// Select example rows to display. In this case there was only 5 rows to show.
+predictions.select("predictedLabel", "label", "features").show(5)
+
+// Select (prediction, true label)
+val evaluator = new MulticlassClassificationEvaluator().setLabelCol("indexedLabel").setPredictionCol("prediction").setMetricName("accuracy")
+// Compute the test error.
+val accuracy = evaluator.evaluate(predictions)
+println(s"Test Error = ${(1.0 - accuracy)}")
+
+// Show by stages the classification of the tree model
+val treeModel = model.stages(2).asInstanceOf[DecisionTreeClassificationModel]
+println(s"Learned classification tree model:\n ${treeModel.toDebugString}")
+
+//Get the total time of the program execution
+val totalTime = System.currentTimeMillis - start
+println("Elapsed time: %1d ms".format(totalTime))
+
+//Get the total of MB used 
+val runtime = Runtime.getRuntime
+val mb = 1024*1024
+println("Used memory: " + (runtime.totalMemory - runtime.freeMemory) / mb + " MB")
+~~~
+## Logistic Regression
+~~~
+
+~~~
 
