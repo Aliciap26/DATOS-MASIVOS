@@ -3,8 +3,8 @@
 # Final project.  
 
 [PDF link](https://github.com/Aliciap26/DATOS-MASIVOS/blob/Unit-4/bigdatafinal/Proyect%20DM.pdf)  
-[SVM scala file]()  
-[Decision tree scala file]()  
+[SVM scala file](https://github.com/Aliciap26/DATOS-MASIVOS/blob/Unit-4/bigdatafinal/SVM)  
+[Decision tree scala file](https://github.com/Aliciap26/DATOS-MASIVOS/blob/Unit-4/bigdatafinal/desiciontree)  
 [Logistic regression scala file](https://github.com/Aliciap26/DATOS-MASIVOS/blob/Unit-4/bigdatafinal/logistic_regression.scala)  
 [Multilayer perceptron scala file](https://github.com/Aliciap26/DATOS-MASIVOS/blob/Unit-4/bigdatafinal/multilayer_perceptron.scala)  
 
