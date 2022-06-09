@@ -2,11 +2,11 @@
 
 # Final project.  
 
-[PDF link]()  
+[PDF link](https://github.com/Aliciap26/DATOS-MASIVOS/blob/Unit-4/bigdatafinal/Proyect%20DM.pdf)  
 [SVM scala file]()  
 [Decision tree scala file]()  
-[Logistic regression scala file]()  
-[Multilayer perceptron scala file]()  
+[Logistic regression scala file](https://github.com/Aliciap26/DATOS-MASIVOS/blob/Unit-4/bigdatafinal/logistic_regression.scala)  
+[Multilayer perceptron scala file](https://github.com/Aliciap26/DATOS-MASIVOS/blob/Unit-4/bigdatafinal/multilayer_perceptron.scala)  
 
 ## Introduction.
 This project consists of 4 algorithms which we are going to compare to determine which is the most efficient and convenient to use in various situations.
@@ -343,9 +343,7 @@ https://github.com/Aliciap26/DATOS-MASIVOS/tree/Unit-4
 
 
 # Video link (Youtube):  
-
-
-
+https://www.youtube.com/watch?v=WDdLq3Ogg3Y  
 
 
 
